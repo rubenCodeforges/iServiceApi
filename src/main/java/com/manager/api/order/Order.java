@@ -10,21 +10,17 @@ import java.util.Date;
 public class Order {
 
     @Id
+    @NotNull
     private String id;
     @NotNull
     private String title;
-    private Date date = new Date();
+    private Date createdAt = new Date();
 
-    //Required by jackson
     public Order() {
     }
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -35,12 +31,8 @@ public class Order {
         this.title = title;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
     @Override
@@ -52,7 +44,7 @@ public class Order {
 
         if (!id.equals(order.id)) return false;
         if (!title.equals(order.title)) return false;
-        return date.equals(order.date);
+        return createdAt.equals(order.createdAt);
 
     }
 
@@ -60,7 +52,7 @@ public class Order {
     public int hashCode() {
         int result = id.hashCode();
         result = 31 * result + title.hashCode();
-        result = 31 * result + date.hashCode();
+        result = 31 * result + createdAt.hashCode();
         return result;
     }
 }

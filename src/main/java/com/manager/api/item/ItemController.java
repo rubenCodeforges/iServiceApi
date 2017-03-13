@@ -12,8 +12,12 @@ import java.util.List;
 @RequestMapping(Api.URL + "/items")
 public class ItemController implements CrudController<Item>{
 
+    private final ItemRepository itemRepository;
+
     @Autowired
-    private ItemRepository itemRepository;
+    public ItemController(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Item> getAll() {
@@ -35,7 +39,7 @@ public class ItemController implements CrudController<Item>{
         itemRepository.save(item);
     }
 
-    @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
     public void delete(@Valid @PathVariable String itemId) {
         itemRepository.delete(itemRepository.findOne(itemId));
     }

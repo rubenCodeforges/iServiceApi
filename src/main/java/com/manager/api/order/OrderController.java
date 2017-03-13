@@ -12,15 +12,19 @@ import java.util.List;
 @RequestMapping(Api.URL + "/orders")
 public class OrderController implements CrudController<Order>{
 
+    private final OrderRepository orderRepository;
+
     @Autowired
-    private OrderRepository orderRepository;
+    public OrderController(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Order> getAll() {
         return orderRepository.findAll();
     }
 
-    @RequestMapping(value = "/{orderId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     public Order findOne(@PathVariable String orderId) {
         return orderRepository.findOne(orderId);
     }

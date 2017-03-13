@@ -6,7 +6,7 @@
 	<groupId>com.manager</groupId>
 	<artifactId>partsmanager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>PartsManager</name>
 	<description>PartsManager API</description>
