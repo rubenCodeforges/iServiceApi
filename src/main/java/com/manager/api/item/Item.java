@@ -5,10 +5,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
+
 @Document
 public class Item {
     @Id
+    @NotNull
     private String id;
+    @NotNull
     private String title;
     private String description;
     @DBRef
@@ -22,10 +26,6 @@ public class Item {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
