@@ -2,13 +2,17 @@ package com.manager.api.item;
 
 
 import com.manager.api.internal.CrudService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service
 public class ItemService implements CrudService<Item> {
 
     private ItemRepository itemRepository;
 
+    @Autowired
     ItemService(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }

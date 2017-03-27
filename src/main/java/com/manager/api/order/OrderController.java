@@ -2,6 +2,7 @@ package com.manager.api.order;
 
 import com.manager.api.Api;
 import com.manager.api.internal.CrudController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -13,6 +14,7 @@ public class OrderController implements CrudController<Order>{
 
     private final OrderService orderService;
 
+    @Autowired
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
