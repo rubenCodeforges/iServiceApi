@@ -12,41 +12,40 @@ import java.util.Collection;
 @RequestMapping(Api.URL + "/items")
 public class ItemController implements CrudController<Item>{
 
-    private final ItemRepository itemRepository;
+    private final ItemService itemService;
 
     @Autowired
-    public ItemController(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+    public ItemController(ItemService itemService) {
+        this.itemService = itemService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Item> getAll() {
-        return itemRepository.findAll();
+        return itemService.getAll();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "order/{orderId}")
     public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
-        return itemRepository.findByOrderId(orderId);
+        return itemService.findByOrderId(orderId);
     }
 
-
     @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
-    public Item findOne(@Valid @PathVariable Long itemId) {
-        return itemRepository.findOne(itemId);
+    public Item findById(@Valid @PathVariable Long itemId) {
+        return itemService.findById(itemId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public void create(@Valid @RequestBody Item item) {
-        itemRepository.save(item);
+        itemService.create(item);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     public void update(@Valid @RequestBody Item item) {
-        itemRepository.save(item);
+        itemService.update(item);
     }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
     public void delete(@Valid @PathVariable Long itemId) {
-        itemRepository.delete(itemRepository.findOne(itemId));
+        itemService.delete(itemId);
     }
 }
