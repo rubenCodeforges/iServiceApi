@@ -1,11 +1,13 @@
 package com.manager.api.internal;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface CrudController <T> {
-    List<T> getAll();
-    T findOne(String id);
+    Collection<T> getAll();
+
+    T findOne(Long id);
     void create(T t);
     void update(T t);
-    void delete(String id);
+
+    void delete(Long id);
 }

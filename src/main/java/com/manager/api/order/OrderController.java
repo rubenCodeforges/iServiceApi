@@ -2,7 +2,6 @@ package com.manager.api.order;
 
 import com.manager.api.Api;
 import com.manager.api.internal.CrudController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,7 +13,6 @@ public class OrderController implements CrudController<Order>{
 
     private final OrderRepository orderRepository;
 
-    @Autowired
     public OrderController(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
@@ -25,13 +23,13 @@ public class OrderController implements CrudController<Order>{
     }
 
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
-    public Order findOne(@PathVariable String orderId) {
+    public Order findOne(@PathVariable Long orderId) {
         return orderRepository.findOne(orderId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public void create(@Valid @RequestBody Order order) {
-        orderRepository.insert(order);
+        orderRepository.save(order);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
@@ -40,7 +38,7 @@ public class OrderController implements CrudController<Order>{
     }
 
     @RequestMapping(value = "/{orderId}", method = RequestMethod.DELETE)
-    public void delete(@Valid @PathVariable String orderId) {
+    public void delete(@Valid @PathVariable Long orderId) {
         orderRepository.delete(orderRepository.findOne(orderId));
     }
 

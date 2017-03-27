@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
+import java.util.Collection;
 
 @RestController
 @RequestMapping(Api.URL + "/items")
@@ -20,18 +20,24 @@ public class ItemController implements CrudController<Item>{
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Item> getAll() {
+    public Collection<Item> getAll() {
         return itemRepository.findAll();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "order/{orderId}")
+    public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
+        return itemRepository.findByOrderId(orderId);
+    }
+
+
     @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
-    public Item findOne(@Valid @PathVariable String itemId) {
+    public Item findOne(@Valid @PathVariable Long itemId) {
         return itemRepository.findOne(itemId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public void create(@Valid @RequestBody Item item) {
-        itemRepository.insert(item);
+        itemRepository.save(item);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
@@ -40,7 +46,7 @@ public class ItemController implements CrudController<Item>{
     }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
-    public void delete(@Valid @PathVariable String itemId) {
+    public void delete(@Valid @PathVariable Long itemId) {
         itemRepository.delete(itemRepository.findOne(itemId));
     }
 }

@@ -1,7 +1,9 @@
 package com.manager.api.item;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-interface ItemRepository extends MongoRepository<Item, String>{
+import java.util.Collection;
 
+interface ItemRepository extends JpaRepository<Item, Long> {
+    public Collection<Item> findByOrderId(Long orderId);
 }

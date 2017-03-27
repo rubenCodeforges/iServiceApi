@@ -1,31 +1,36 @@
 package com.manager.api.item;
 
-import com.manager.api.order.Order;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.manager.api.order.Order;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Document
+@Entity
+@Table(name = "tb_item")
 public class Item {
     @Id
-    @NotNull
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @NotNull
     private String title;
-    private String description;
-    @DBRef
+
+    @NotNull
+    @ManyToOne
     private Order order;
 
-    public Item(String title, String description, Order order) {
-        this.title = title;
-        this.description = description;
-        this.order = order;
+    private String description;
+
+    public Item() {
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -42,10 +47,6 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Order getOrder() {
-        return order;
     }
 
     public void setOrder(Order order) {
