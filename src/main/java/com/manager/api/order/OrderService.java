@@ -1,7 +1,6 @@
 package com.manager.api.order;
 
 import com.manager.api.internal.CrudService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -11,7 +10,6 @@ public class OrderService implements CrudService<Order> {
 
     private OrderRepository orderRepository;
 
-    @Autowired
     OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }

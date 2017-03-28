@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@Table(name = "tb_order")
+@Table(name = "TB_ORDER")
 public class Order {
 
     @Id
@@ -18,7 +18,8 @@ public class Order {
     @NotNull
     private String title;
 
-    @OneToMany(mappedBy = "order")
+    @ManyToMany
+    @JoinTable(name = "TB_ORDER_ITEMS")
     private Collection<Item> items;
 
     private Date createdAt = new Date();
@@ -28,10 +29,6 @@ public class Order {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {

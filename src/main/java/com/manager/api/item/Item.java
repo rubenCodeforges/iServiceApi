@@ -5,9 +5,10 @@ import com.manager.api.order.Order;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 
 @Entity
-@Table(name = "tb_item")
+@Table(name = "TB_ITEM")
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,8 +18,8 @@ public class Item {
     private String title;
 
     @NotNull
-    @ManyToOne
-    private Order order;
+    @ManyToMany(mappedBy = "items")
+    private Collection<Order> orders;
 
     private String description;
 
@@ -27,10 +28,6 @@ public class Item {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -49,7 +46,7 @@ public class Item {
         this.description = description;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(Collection<Order> orders) {
+        this.orders = orders;
     }
 }

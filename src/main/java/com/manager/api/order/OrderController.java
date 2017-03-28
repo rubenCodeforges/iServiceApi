@@ -2,7 +2,6 @@ package com.manager.api.order;
 
 import com.manager.api.Api;
 import com.manager.api.internal.CrudController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,7 +13,6 @@ public class OrderController implements CrudController<Order>{
 
     private final OrderService orderService;
 
-    @Autowired
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
@@ -25,7 +23,7 @@ public class OrderController implements CrudController<Order>{
     }
 
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
-    public Order findById(@PathVariable Long orderId) {
+    public Order findById(@PathVariable Long orderId) throws OrderNotFoundException {
         return orderService.findById(orderId);
     }
 

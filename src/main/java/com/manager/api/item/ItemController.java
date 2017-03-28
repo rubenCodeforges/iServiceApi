@@ -2,7 +2,6 @@ package com.manager.api.item;
 
 import com.manager.api.Api;
 import com.manager.api.internal.CrudController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,7 +13,6 @@ public class ItemController implements CrudController<Item>{
 
     private final ItemService itemService;
 
-    @Autowired
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
@@ -24,13 +22,13 @@ public class ItemController implements CrudController<Item>{
         return itemService.getAll();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "order/{orderId}")
-    public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
-        return itemService.findByOrderId(orderId);
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "order/{orderId}")
+//    public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
+//        return itemService.findByOrderId(orderId);
+//    }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
-    public Item findById(@Valid @PathVariable Long itemId) {
+    public Item findById(@Valid @PathVariable Long itemId) throws ItemNotFoundException {
         return itemService.findById(itemId);
     }
 
