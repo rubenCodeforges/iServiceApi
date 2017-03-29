@@ -22,10 +22,10 @@ public class ItemController implements CrudController<Item>{
         return itemService.getAll();
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "order/{orderId}")
-//    public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
-//        return itemService.findByOrderId(orderId);
-//    }
+    @RequestMapping(method = RequestMethod.GET, value = "/order/{orderId}")
+    public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
+        return itemService.findByOrderId(orderId);
+    }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
     public Item findById(@Valid @PathVariable Long itemId) throws ItemNotFoundException {

@@ -15,9 +15,9 @@ public class ItemService implements CrudService<Item> {
         this.itemRepository = itemRepository;
     }
 
-//    Collection<Item> findByOrderId(Long orderId) {
-//        return itemRepository.findByOrderId(orderId);
-//    }
+    Collection<Item> findByOrderId(Long orderId) {
+        return itemRepository.findByOrders_Id(orderId);
+    }
 
     @Override
     public Collection<Item> getAll() {
