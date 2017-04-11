@@ -25,8 +25,8 @@ public class OrderService implements CrudService<Order> {
     }
 
     @Override
-    public void create(Order order) {
-        orderRepository.save(order);
+    public Order create(Order order) {
+        return orderRepository.save(order);
     }
 
     @Override

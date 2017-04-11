@@ -30,8 +30,8 @@ public class ItemService implements CrudService<Item> {
     }
 
     @Override
-    public void create(Item item) {
-        itemRepository.save(item);
+    public Item create(Item item) {
+        return itemRepository.save(item);
     }
 
     @Override

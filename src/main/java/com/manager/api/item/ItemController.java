@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Collection;
 
+@CrossOrigin
 @RestController
 @RequestMapping(Api.URL + "/items")
 public class ItemController implements CrudController<Item>{
@@ -22,19 +23,14 @@ public class ItemController implements CrudController<Item>{
         return itemService.getAll();
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "order/{orderId}")
-//    public Collection<Item> getAllByOrderId(@Valid @PathVariable Long orderId) {
-//        return itemService.findByOrderId(orderId);
-//    }
-
-    @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
     public Item findById(@Valid @PathVariable Long itemId) throws ItemNotFoundException {
         return itemService.findById(itemId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void create(@Valid @RequestBody Item item) {
-        itemService.create(item);
+    public Item create(@Valid @RequestBody Item item) {
+        return itemService.create(item);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
@@ -42,7 +38,7 @@ public class ItemController implements CrudController<Item>{
         itemService.update(item);
     }
 
-    @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{itemId}/delete", method = RequestMethod.GET)
     public void delete(@Valid @PathVariable Long itemId) {
         itemService.delete(itemId);
     }
