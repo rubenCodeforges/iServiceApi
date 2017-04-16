@@ -24,6 +24,12 @@ public class Item {
 
     private String description;
 
+    private Float price;
+
+    private Currency currency = Currency.UAH;
+
+    private String image;
+
     public Item() {
     }
 
@@ -49,5 +55,29 @@ public class Item {
 
     public void setOrder(Collection<Order> orders) {
         this.orders = orders;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

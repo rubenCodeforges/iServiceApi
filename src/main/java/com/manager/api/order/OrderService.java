@@ -1,41 +1,43 @@
 package com.manager.api.order;
 
-import com.manager.api.internal.CrudService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
 @Service
-public class OrderService implements CrudService<Order> {
+public class OrderService {
 
     private OrderRepository orderRepository;
+    private ModelMapper modelMapper = new ModelMapper();
 
     OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
-    @Override
     public Collection<Order> getAll() {
         return orderRepository.findAll();
     }
 
-    @Override
-    public Order findById(Long id) {
-        return orderRepository.findOne(id);
+    Order findById(Long id) throws OrderNotFoundException {
+        Order order = orderRepository.findOne(id);
+        if (order == null) {
+            throw new OrderNotFoundException();
+        }
+        return order;
     }
 
-    @Override
-    public Order create(Order order) {
-        return orderRepository.save(order);
+    public void create(OrderDto orderDto) {
+        Order order = modelMapper.map(orderDto, Order.class);
+        order = orderRepository.save(order);
+        modelMapper.map(order, OrderDto.class);
     }
 
-    @Override
-    public void update(Order order) {
+    void update(Order order) {
         orderRepository.save(order);
     }
 
-    @Override
-    public void delete(Long id) {
+    void delete(Long id) {
         orderRepository.delete(id);
     }
 }

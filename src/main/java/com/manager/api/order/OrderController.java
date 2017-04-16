@@ -1,7 +1,6 @@
 package com.manager.api.order;
 
 import com.manager.api.Api;
-import com.manager.api.internal.CrudController;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -10,7 +9,7 @@ import java.util.Collection;
 @CrossOrigin
 @RestController
 @RequestMapping(Api.URL + "/orders")
-public class OrderController implements CrudController<Order>{
+public class OrderController {
 
     private final OrderService orderService;
 
@@ -29,8 +28,8 @@ public class OrderController implements CrudController<Order>{
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Order create(@Valid @RequestBody Order order) {
-        return orderService.create(order);
+    public void create(@Valid @RequestBody OrderDto order) {
+        orderService.create(order);
     }
 
     @RequestMapping(method = RequestMethod.PUT)

@@ -1,7 +1,6 @@
 package com.manager.api.item;
 
 import com.manager.api.Api;
-import com.manager.api.internal.CrudController;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -10,7 +9,7 @@ import java.util.Collection;
 @CrossOrigin
 @RestController
 @RequestMapping(Api.URL + "/items")
-public class ItemController implements CrudController<Item>{
+public class ItemController {
 
     private final ItemService itemService;
 
@@ -19,22 +18,22 @@ public class ItemController implements CrudController<Item>{
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Collection<Item> getAll() {
+    public Collection<ItemDto> getAll() {
         return itemService.getAll();
     }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
-    public Item findById(@Valid @PathVariable Long itemId) throws ItemNotFoundException {
+    public ItemDto findById(@Valid @PathVariable Long itemId) throws ItemNotFoundException {
         return itemService.findById(itemId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Item create(@Valid @RequestBody Item item) {
+    public ItemDto create(@Valid @RequestBody CreateItemDto item) {
         return itemService.create(item);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void update(@Valid @RequestBody Item item) {
+    public void update(@Valid @RequestBody ItemDto item) {
         itemService.update(item);
     }
 
