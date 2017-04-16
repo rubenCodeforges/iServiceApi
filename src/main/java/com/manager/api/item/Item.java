@@ -2,11 +2,13 @@ package com.manager.api.item;
 
 
 import com.manager.api.order.Order;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 
+@CrossOrigin
 @Entity
 @Table(name = "TB_ITEM")
 public class Item {
@@ -17,7 +19,6 @@ public class Item {
     @NotNull
     private String title;
 
-    @NotNull
     @ManyToMany(mappedBy = "items")
     private Collection<Order> orders;
 

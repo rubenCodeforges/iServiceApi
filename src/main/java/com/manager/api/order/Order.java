@@ -24,7 +24,17 @@ public class Order {
 
     private Date createdAt = new Date();
 
+    private OrderState state = OrderState.NEW;
+
     public Order() {
+    }
+
+    public OrderState getState() {
+        return state;
+    }
+
+    public void setState(OrderState state) {
+        this.state = state;
     }
 
     public Long getId() {
