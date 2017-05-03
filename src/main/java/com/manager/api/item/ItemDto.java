@@ -1,5 +1,6 @@
 package com.manager.api.item;
 
+import com.manager.api.image.ImageDto;
 import com.manager.api.order.Order;
 
 import javax.validation.constraints.NotNull;
@@ -13,7 +14,7 @@ public class ItemDto {
     private String description;
     private Float price;
     private Currency currency;
-    private String image;
+    private Collection<Ima> images;
 
     public Long getId() {
         return id;
@@ -59,11 +60,11 @@ public class ItemDto {
         this.currency = currency;
     }
 
-    public String getImage() {
-        return image;
+    public Collection<ImageDto> getImages() {
+        return images;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImages(Collection<ImageDto> images) {
+        this.images = images;
     }
 }
