@@ -27,6 +27,16 @@ public class Order {
     private OrderState state = OrderState.NEW;
 
     public Order() {
+
+    }
+
+    public Order(String title) {
+        this.title = title;
+    }
+
+    public Order(String title, Collection<Item> items) {
+        this.title = title;
+        this.items = items;
     }
 
     public OrderState getState() {

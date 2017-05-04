@@ -28,7 +28,7 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ItemDto create(@Valid @RequestBody CreateItemDto item) {
+    public Item create(@Valid @RequestBody Item item) {
         return itemService.create(item);
     }
 

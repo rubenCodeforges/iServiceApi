@@ -18,17 +18,17 @@ public class OrderController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Collection<Order> getAll() {
+    public Collection<OrderDto> getAll() {
         return orderService.getAll();
     }
 
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
-    public Order findById(@PathVariable Long orderId) throws OrderNotFoundException {
+    public OrderDto findById(@PathVariable Long orderId) throws OrderNotFoundException {
         return orderService.findById(orderId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void create(@Valid @RequestBody OrderDto order) {
+    public void create(@Valid @RequestBody OrderCreateDto order) {
         orderService.create(order);
     }
 

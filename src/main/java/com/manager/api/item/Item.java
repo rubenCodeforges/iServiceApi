@@ -1,6 +1,7 @@
 package com.manager.api.item;
 
 
+import com.manager.api.image.Image;
 import com.manager.api.order.Order;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -28,9 +29,27 @@ public class Item {
 
     private Currency currency = Currency.UAH;
 
-    private String image;
+    @ManyToMany
+    @JoinTable(name = "TB_ITEM_IMAGES")
+    private Collection<Image> images;
 
     public Item() {
+    }
+
+    public Item(String title) {
+        this.title = title;
+    }
+
+    public Item(String title,
+                String description,
+                Float price,
+                Currency currency,
+                Collection<Image> images) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.currency = currency;
+        this.images = images;
     }
 
     public Long getId() {
@@ -57,6 +76,10 @@ public class Item {
         this.orders = orders;
     }
 
+    public Collection<Order> getOrders() {
+        return this.orders;
+    }
+
     public Float getPrice() {
         return price;
     }
@@ -73,11 +96,11 @@ public class Item {
         this.currency = currency;
     }
 
-    public String getImage() {
-        return image;
+    public Collection<Image> getImages() {
+        return this.images;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImages(Collection<Image> images) {
+        this.images = images;
     }
 }

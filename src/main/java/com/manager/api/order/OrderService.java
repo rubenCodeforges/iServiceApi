@@ -1,6 +1,5 @@
 package com.manager.api.order;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -9,28 +8,26 @@ import java.util.Collection;
 public class OrderService {
 
     private OrderRepository orderRepository;
-    private ModelMapper modelMapper = new ModelMapper();
 
     OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
-    public Collection<Order> getAll() {
-        return orderRepository.findAll();
+    public Collection<OrderDto> getAll() {
+        Collection<Order> orders = orderRepository.findAll();
+        return OrderMapper.mapCollectionToDto(orders);
     }
 
-    Order findById(Long id) throws OrderNotFoundException {
+    OrderDto findById(Long id) throws OrderNotFoundException {
         Order order = orderRepository.findOne(id);
         if (order == null) {
             throw new OrderNotFoundException();
         }
-        return order;
+        return OrderMapper.mapToDto(order);
     }
 
-    public void create(OrderDto orderDto) {
-        Order order = modelMapper.map(orderDto, Order.class);
-        order = orderRepository.save(order);
-        modelMapper.map(order, OrderDto.class);
+    public void create(OrderCreateDto orderCreateDto) {
+        orderRepository.save(OrderMapper.mapCreateDtoToEntity(orderCreateDto));
     }
 
     void update(Order order) {

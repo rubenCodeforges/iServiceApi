@@ -1,7 +1,10 @@
 package com.manager.api.image;
 
-/**
- * Created by Admin on 17.04.2017.
- */
-public interface ImageRepository {
+import com.manager.api.item.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Collection;
+
+interface ImageRepository extends JpaRepository<Image, Long> {
+    Collection<Item> findByItems_Id(Long orderId);
 }

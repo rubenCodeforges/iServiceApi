@@ -1,23 +1,46 @@
 package com.manager.api.item;
 
 import com.manager.api.image.ImageDto;
-import com.manager.api.order.Order;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.NotNull;
 import java.util.Collection;
 
 public class ItemDto {
     private Long id;
-    @NotNull
+    @NotEmpty
     private String title;
-    private Collection<Order> orders;
     private String description;
     private Float price;
     private Currency currency;
-    private Collection<Ima> images;
+    private Collection<ImageDto> images;
+
+    public ItemDto() {
+    }
+
+    public ItemDto(String title) {
+        this.title = title;
+    }
+
+    public ItemDto(Long id,
+                   String title,
+                   String description,
+                   Float price,
+                   Currency currency,
+                   Collection<ImageDto> images) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.currency = currency;
+        this.images = images;
+    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -26,14 +49,6 @@ public class ItemDto {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public Collection<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Collection<Order> orders) {
-        this.orders = orders;
     }
 
     public String getDescription() {

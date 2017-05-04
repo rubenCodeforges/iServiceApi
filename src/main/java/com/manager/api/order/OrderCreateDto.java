@@ -1,22 +1,24 @@
 package com.manager.api.order;
 
-import com.manager.api.item.Item;
+import com.manager.api.item.ItemDto;
 
-import javax.validation.constraints.NotNull;
 import java.util.Collection;
-import java.util.Date;
 
-public class OrderDto {
-    private Long id;
-
-    @NotNull
+public class OrderCreateDto {
     private String title;
-    private Collection<Item> items;
-    private Date createdAt = new Date();
-    private OrderState state = OrderState.NEW;
+    private Collection<ItemDto> items;
+    private OrderState state;
 
-    public Long getId() {
-        return id;
+    public OrderCreateDto() {
+
+    }
+
+    public OrderCreateDto(String title,
+                          Collection<ItemDto> items,
+                          OrderState state) {
+        this.title = title;
+        this.items = items;
+        this.state = state;
     }
 
     public String getTitle() {
@@ -27,23 +29,11 @@ public class OrderDto {
         this.title = title;
     }
 
-    public Collection<Item> getItems() {
+    public Collection<ItemDto> getItems() {
         return items;
     }
 
-    public void setItems(Collection<Item> items) {
+    public void setItems(Collection<ItemDto> items) {
         this.items = items;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public OrderState getState() {
-        return state;
-    }
-
-    public void setState(OrderState state) {
-        this.state = state;
     }
 }

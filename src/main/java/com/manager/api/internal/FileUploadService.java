@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.xml.ws.http.HTTPException;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,18 +15,30 @@ import java.nio.file.Paths;
 public class FileUploadService {
 
     @Value("${image.upload.path}")
-    public static String UPLOAD_PATH;
+    public String UPLOAD_PATH;
 
-    public void uploadFile(MultipartFile file) throws HTTPException {
+    //TODO: needs to be modified, add custom exception
+    public void uploadFile(MultipartFile file) throws IOException {
+
+        //TODO: Find better place
+        File dir = new File(UPLOAD_PATH);
+        if (!dir.exists()) {
+            new File(UPLOAD_PATH).mkdirs();
+        }
+
         if (file.isEmpty()) {
             throw new HTTPException(500);
         }
         try {
             byte[] bytes = file.getBytes();
-            Path path = Paths.get(FileUploadService.UPLOAD_PATH + file.getOriginalFilename());
+            Path path = Paths.get(UPLOAD_PATH + file.getOriginalFilename());
             Files.write(path, bytes);
         } catch (Exception e) {
-            throw new HTTPException(500);
+            e.getStackTrace();
         }
+    }
+
+    public String getFileFullPath(MultipartFile file) {
+        return UPLOAD_PATH + file.getOriginalFilename();
     }
 }
