@@ -31,14 +31,15 @@ public class Item {
     private Currency currency = Currency.UAH;
 
     @Nullable
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "TB_ITEM_IMAGES")
     private Collection<Image> images;
 
     public Item() {
     }
 
-    public Item(String title) {
+    public Item(Long id, String title) {
+        this.id = id;
         this.title = title;
     }
 

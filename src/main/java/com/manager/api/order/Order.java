@@ -18,7 +18,7 @@ public class Order {
     @NotNull
     private String title;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "TB_ORDER_ITEMS")
     private Collection<Item> items;
 

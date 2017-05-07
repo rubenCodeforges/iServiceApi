@@ -30,6 +30,14 @@ public class ItemMapper {
         if (itemDto == null) {
             return null;
         }
+
+        if (itemDto.getDescription().isEmpty()) {
+            return new Item(
+                    itemDto.getId(),
+                    itemDto.getTitle()
+            );
+        }
+
         Collection<Image> images = ImageMapper.mapDtoCollectionToEntity(itemDto.getImages());
 
         if (images == null || images.isEmpty()) {
