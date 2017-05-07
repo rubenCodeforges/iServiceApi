@@ -1,7 +1,9 @@
 package com.manager.api.order;
 
+import com.manager.api.item.ItemDto;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import java.util.Collection;
 import java.util.Date;
 
 public class OrderDto {
@@ -10,12 +12,18 @@ public class OrderDto {
     private String title;
     private OrderState state;
     private Date createdAt;
+    private Collection<ItemDto> items;
 
-    public OrderDto(Long id, String title, OrderState state, Date createdAt) {
+    public OrderDto(Long id,
+                    String title,
+                    OrderState state,
+                    Date createdAt,
+                    Collection<ItemDto> items) {
         this.id = id;
         this.title = title;
         this.state = state;
         this.createdAt = createdAt;
+        this.items = items;
     }
 
     public Long getId() {
@@ -44,5 +52,9 @@ public class OrderDto {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Collection<ItemDto> getItems() {
+        return items;
     }
 }

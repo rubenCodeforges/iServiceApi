@@ -18,7 +18,8 @@ public class OrderMapper {
                 order.getId(),
                 order.getTitle(),
                 order.getState(),
-                order.getCreatedAt()
+                order.getCreatedAt(),
+                ItemMapper.mapCollectionToDto(order.getItems())
         );
     }
 

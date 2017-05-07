@@ -1,6 +1,7 @@
 package com.manager.api.item;
 
 
+import com.manager.api.image.Image;
 import com.manager.api.image.ImageMapper;
 
 import java.util.Collection;
@@ -29,7 +30,16 @@ public class ItemMapper {
         if (itemDto == null) {
             return null;
         }
+        Collection<Image> images = ImageMapper.mapDtoCollectionToEntity(itemDto.getImages());
 
+        if (images == null || images.isEmpty()) {
+            return new Item(
+                    itemDto.getTitle(),
+                    itemDto.getDescription(),
+                    itemDto.getPrice(),
+                    itemDto.getCurrency()
+            );
+        }
         return new Item(
                 itemDto.getTitle(),
                 itemDto.getDescription(),
