@@ -19,7 +19,7 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
 
-    public Image create(MultipartFile file) throws IOException {
+    public ImageDto create(MultipartFile file) throws IOException {
         Image image = new Image();
 
         if (!file.isEmpty()) {
@@ -27,7 +27,7 @@ public class ImageService {
             image.setFilePath(fileUploadService.getFileFullPath(file));
         }
 
-        return this.imageRepository.save(image);
+        return ImageMapper.mapToDto(this.imageRepository.save(image));
     }
 
     public Resource getImageById(Long id) throws IOException {

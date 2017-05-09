@@ -6,8 +6,17 @@ public class ImageDto{
     private Long id;
     private String imageUrl;
 
+    public ImageDto() {
+
+    }
+
     public ImageDto(Long id) {
         this.id = id;
+    }
+
+    public ImageDto(Long id, String imageUrl) {
+        this.id = id;
+        this.imageUrl = imageUrl;
     }
 
     public String getImageUrl() {

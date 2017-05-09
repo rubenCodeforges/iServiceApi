@@ -19,7 +19,7 @@ public class ImageController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Image create(@RequestParam("uploadedFile") MultipartFile multipartFile) throws IOException {
+    public ImageDto create(@RequestParam("file") MultipartFile multipartFile) throws IOException {
         return this.imageService.create(multipartFile);
     }
 

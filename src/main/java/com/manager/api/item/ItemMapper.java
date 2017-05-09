@@ -31,7 +31,7 @@ public class ItemMapper {
             return null;
         }
 
-        if (itemDto.getDescription().isEmpty()) {
+        if (itemDto.getDescription() == null) {
             return new Item(
                     itemDto.getId(),
                     itemDto.getTitle()
