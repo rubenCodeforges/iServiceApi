@@ -1,5 +1,6 @@
 package com.manager.api.order;
 
+import com.manager.api.item.Item;
 import com.manager.api.item.ItemMapper;
 
 import java.util.Collection;
@@ -43,10 +44,11 @@ public class OrderMapper {
         if (createDto == null) {
             return null;
         }
+        Collection<Item> items = ItemMapper.mapDtoCollectionToEntity(createDto.getItems());
 
         return new Order(
                 createDto.getTitle(),
-                ItemMapper.mapDtoCollectionToEntity(createDto.getItems())
+                items
         );
     }
 

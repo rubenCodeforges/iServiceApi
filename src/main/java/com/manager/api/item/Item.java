@@ -3,7 +3,6 @@ package com.manager.api.item;
 
 import com.manager.api.image.Image;
 import com.manager.api.order.Order;
-import com.sun.istack.internal.Nullable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
@@ -21,7 +20,7 @@ public class Item {
     @NotNull
     private String title;
 
-    @ManyToMany(mappedBy = "items")
+    @ManyToMany(mappedBy = "items", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Order> orders;
 
     private String description;
@@ -30,7 +29,6 @@ public class Item {
 
     private Currency currency = Currency.UAH;
 
-    @Nullable
     @ManyToMany
     @JoinTable(name = "TB_ITEM_IMAGES")
     private Collection<Image> images;
