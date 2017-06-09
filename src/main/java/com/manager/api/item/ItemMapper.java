@@ -31,30 +31,17 @@ public class ItemMapper {
             return null;
         }
 
-        if (itemDto.getId() != null) {
-            return new Item(
-                    itemDto.getId(),
-                    itemDto.getTitle()
-            );
+        if (isItemFromOrder(itemDto)) {
+            return createItemFromOrder(itemDto);
         }
 
         Collection<Image> images = ImageMapper.mapDtoCollectionToEntity(itemDto.getImages());
 
-        if (images == null || images.isEmpty()) {
-            return new Item(
-                    itemDto.getTitle(),
-                    itemDto.getDescription(),
-                    itemDto.getPrice(),
-                    itemDto.getCurrency()
-            );
+        if (hasNoImages(images)) {
+            return createItemWithoutImages(itemDto);
         }
-        return new Item(
-                itemDto.getTitle(),
-                itemDto.getDescription(),
-                itemDto.getPrice(),
-                itemDto.getCurrency(),
-                ImageMapper.mapDtoCollectionToEntity(itemDto.getImages())
-        );
+
+        return createNewItemWithImages(itemDto);
     }
 
     public static Collection<ItemDto> mapCollectionToDto(Collection<Item> items) {
@@ -69,6 +56,40 @@ public class ItemMapper {
             return null;
         }
         return itemDtos.stream().map(ItemMapper::mapToEntity).collect(Collectors.toList());
+    }
+
+    private static boolean isItemFromOrder(ItemDto itemDto) {
+        return itemDto.getId() != null;
+    }
+
+    private static Item createItemFromOrder(ItemDto itemDto) {
+        return new Item(
+                itemDto.getId(),
+                itemDto.getTitle()
+        );
+    }
+
+    private static Item createNewItemWithImages(ItemDto itemDto) {
+        return new Item(
+                itemDto.getTitle(),
+                itemDto.getDescription(),
+                itemDto.getPrice(),
+                itemDto.getCurrency(),
+                ImageMapper.mapDtoCollectionToEntity(itemDto.getImages())
+        );
+    }
+
+    private static Item createItemWithoutImages(ItemDto itemDto) {
+        return new Item(
+                itemDto.getTitle(),
+                itemDto.getDescription(),
+                itemDto.getPrice(),
+                itemDto.getCurrency()
+        );
+    }
+
+    private static boolean hasNoImages(Collection<Image> images) {
+        return images == null || images.isEmpty();
     }
 }
 

@@ -14,8 +14,15 @@ public class ItemService {
         this.itemRepository = itemRepository;
     }
 
-    public Collection<ItemDto> getAll() {
-        Collection<Item> items = itemRepository.findAll();
+    public Collection<ItemDto> getAll(String search) {
+        Collection<Item> items;
+
+        if(search != null){
+            items = itemRepository.findByTitleContaining(search);
+        }else {
+            items = itemRepository.findAll();
+        }
+
         return ItemMapper.mapCollectionToDto(items);
     }
 

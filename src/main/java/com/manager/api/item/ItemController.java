@@ -18,8 +18,8 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Collection<ItemDto> getAll() {
-        return itemService.getAll();
+    public Collection<ItemDto> getAll(@RequestParam(value = "search", required = false) String search) {
+        return itemService.getAll(search);
     }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)

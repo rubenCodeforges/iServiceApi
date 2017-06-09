@@ -15,13 +15,7 @@ public class OrderMapper {
             return null;
         }
 
-        return new OrderDto(
-                order.getId(),
-                order.getTitle(),
-                order.getState(),
-                order.getCreatedAt(),
-                ItemMapper.mapCollectionToDto(order.getItems())
-        );
+        return createNewOrderDto(order);
     }
 
     public static Collection<OrderDto> mapCollectionToDto(Collection<Order> orders) {
@@ -44,6 +38,7 @@ public class OrderMapper {
         if (createDto == null) {
             return null;
         }
+
         Collection<Item> items = ItemMapper.mapDtoCollectionToEntity(createDto.getItems());
 
         return new Order(
@@ -51,5 +46,16 @@ public class OrderMapper {
                 items
         );
     }
+
+    private static OrderDto createNewOrderDto(Order order) {
+        return new OrderDto(
+                order.getId(),
+                order.getTitle(),
+                order.getState(),
+                order.getCreatedAt(),
+                ItemMapper.mapCollectionToDto(order.getItems())
+        );
+    }
+
 
 }
