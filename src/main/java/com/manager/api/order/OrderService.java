@@ -30,8 +30,9 @@ public class OrderService {
         orderRepository.save(OrderMapper.mapCreateDtoToEntity(orderCreateDto));
     }
 
-    void update(Order order) {
+    OrderDto update(Order order) {
         orderRepository.save(order);
+        return OrderMapper.mapToDto(order);
     }
 
     void delete(Long id) {

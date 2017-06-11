@@ -33,8 +33,8 @@ public class OrderController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void update(@Valid @RequestBody Order order) {
-        orderService.update(order);
+    public OrderDto update(@Valid @RequestBody Order order) {
+        return orderService.update(order);
     }
 
     @RequestMapping(value = "/{orderId}/delete", method = RequestMethod.GET)
