@@ -1,6 +1,6 @@
 package com.manager.api.order;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-interface OrderRepository extends MongoRepository <Order, String>{
+interface OrderRepository extends JpaRepository<Order, Long> {
 }

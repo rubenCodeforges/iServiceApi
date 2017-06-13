@@ -1,25 +1,53 @@
 package com.manager.api.order;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.manager.api.item.Item;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 import java.util.Date;
 
-@Document
+@Entity
+@Table(name = "TB_ORDER")
 public class Order {
 
     @Id
-    @NotNull
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @NotNull
     private String title;
+
+    @ManyToMany
+    @JoinTable(name = "TB_ORDER_ITEMS")
+    private Collection<Item> items;
+
     private Date createdAt = new Date();
 
+    private OrderState state = OrderState.NEW;
+
     public Order() {
+
     }
 
-    public String getId() {
+    public Order(String title) {
+        this.title = title;
+    }
+
+    public Order(String title, Collection<Item> items) {
+        this.title = title;
+        this.items = items;
+    }
+
+    public OrderState getState() {
+        return state;
+    }
+
+    public void setState(OrderState state) {
+        this.state = state;
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -31,29 +59,16 @@ public class Order {
         this.title = title;
     }
 
+    public Collection<Item> getItems() {
+        return items;
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Order order = (Order) o;
-
-        if (!id.equals(order.id)) return false;
-        if (!title.equals(order.title)) return false;
-        return createdAt.equals(order.createdAt);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + title.hashCode();
-        result = 31 * result + createdAt.hashCode();
-        return result;
+    public void setItems(Collection<Item> items) {
+        this.items = items;
     }
 }
 

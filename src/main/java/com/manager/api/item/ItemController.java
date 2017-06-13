@@ -1,46 +1,44 @@
 package com.manager.api.item;
 
 import com.manager.api.Api;
-import com.manager.api.internal.CrudController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
+import java.util.Collection;
 
+@CrossOrigin
 @RestController
 @RequestMapping(Api.URL + "/items")
-public class ItemController implements CrudController<Item>{
+public class ItemController {
 
-    private final ItemRepository itemRepository;
+    private final ItemService itemService;
 
-    @Autowired
-    public ItemController(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+    public ItemController(ItemService itemService) {
+        this.itemService = itemService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Item> getAll() {
-        return itemRepository.findAll();
-    }
-
-    @RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
-    public Item findOne(@Valid @PathVariable String itemId) {
-        return itemRepository.findOne(itemId);
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public void create(@Valid @RequestBody Item item) {
-        itemRepository.insert(item);
-    }
-
-    @RequestMapping(method = RequestMethod.PUT)
-    public void update(@Valid @RequestBody Item item) {
-        itemRepository.save(item);
+    public Collection<ItemDto> getAll(@RequestParam(value = "search", required = false) String search) {
+        return itemService.getAll(search);
     }
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
-    public void delete(@Valid @PathVariable String itemId) {
-        itemRepository.delete(itemRepository.findOne(itemId));
+    public ItemDto findById(@Valid @PathVariable Long itemId) throws ItemNotFoundException {
+        return itemService.findById(itemId);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Item create(@Valid @RequestBody Item item) {
+        return itemService.create(item);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public void update(@Valid @RequestBody ItemDto item) {
+        itemService.update(item);
+    }
+
+    @RequestMapping(value = "/{itemId}/delete", method = RequestMethod.GET)
+    public void delete(@Valid @PathVariable Long itemId) {
+        itemService.delete(itemId);
     }
 }
