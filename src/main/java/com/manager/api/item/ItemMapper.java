@@ -59,7 +59,7 @@ public class ItemMapper {
     }
 
     private static boolean isItemFromOrder(ItemDto itemDto) {
-        return itemDto.getId() != null;
+        return itemDto.getId() != null && itemDto.getImages().size() == 0;
     }
 
     private static Item createItemFromOrder(ItemDto itemDto) {
