@@ -41,7 +41,8 @@ public class ItemService {
     }
 
     void update(ItemDto itemDto) {
-        itemRepository.save(ItemMapper.mapToEntity(itemDto));
+        Item item = ItemMapper.mapToEntity(itemDto);
+        itemRepository.save(item);
     }
 
     void delete(Long id) {

@@ -5,6 +5,7 @@ import com.manager.api.Api;
 public class ImageDto{
     private Long id;
     private String imageUrl;
+    private String thumbUrl;
 
     public ImageDto() {
 
@@ -33,5 +34,9 @@ public class ImageDto{
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getThumbUrl() {
+        return getImageUrl() + "/thumb";
     }
 }

@@ -18,6 +18,7 @@ public class Image {
     private Collection<Item> items;
 
     private String filePath;
+    private String thumbPath;
 
     public Image() {
     }
@@ -44,5 +45,13 @@ public class Image {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public String getThumbPath() {
+        return thumbPath;
+    }
+
+    public void setThumbPath(String thumbPath) {
+        this.thumbPath = thumbPath;
     }
 }

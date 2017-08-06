@@ -70,6 +70,16 @@ public class ItemMapper {
     }
 
     private static Item createNewItemWithImages(ItemDto itemDto) {
+        if(itemDto.getId() != null) {
+            return new Item(
+                    itemDto.getId(),
+                    itemDto.getTitle(),
+                    itemDto.getDescription(),
+                    itemDto.getPrice(),
+                    itemDto.getCurrency(),
+                    ImageMapper.mapDtoCollectionToEntity(itemDto.getImages())
+            );
+        }
         return new Item(
                 itemDto.getTitle(),
                 itemDto.getDescription(),

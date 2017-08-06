@@ -62,7 +62,19 @@ public class Item {
         this.currency = currency;
         this.images = images;
     }
-
+    public Item(Long id,
+                String title,
+                String description,
+                Float price,
+                Currency currency,
+                Collection<Image> images) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.currency = currency;
+        this.images = images;
+    }
     public Long getId() {
         return id;
     }
