@@ -25,6 +25,7 @@ public class ImageService {
         if (!file.isEmpty()) {
             fileUploadService.uploadFile(file);
             image.setFilePath(fileUploadService.getFileFullPath(file));
+            image.setThumbPath(fileUploadService.getThumbnailPath(file));
         }
 
         return ImageMapper.mapToDto(this.imageRepository.save(image));
@@ -33,5 +34,10 @@ public class ImageService {
     public Resource getImageById(Long id) throws IOException {
         Image image = imageRepository.findOne(id);
         return new FileSystemResource(image.getFilePath());
+    }
+
+    public Resource getImageThumbnailById(Long id) throws IOException {
+        Image image = imageRepository.findOne(id);
+        return new FileSystemResource(image.getThumbPath());
     }
 }

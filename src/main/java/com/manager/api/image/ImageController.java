@@ -28,4 +28,10 @@ public class ImageController {
     public Resource getImageById(@PathVariable("id") Long id) throws IOException {
         return imageService.getImageById(id);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/{id}/thumb", produces = "image/png")
+    public Resource getImageThumbnailById(@PathVariable("id") Long id) throws IOException {
+        return imageService.getImageThumbnailById(id);
+    }
 }
