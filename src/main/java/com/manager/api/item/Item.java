@@ -20,7 +20,7 @@ public class Item {
     @NotNull
     private String title;
 
-    @ManyToMany(mappedBy = "items", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(mappedBy = "items", cascade = {CascadeType.MERGE})
     private Collection<Order> orders;
 
     private String description;
@@ -75,6 +75,7 @@ public class Item {
         this.currency = currency;
         this.images = images;
     }
+
     public Long getId() {
         return id;
     }

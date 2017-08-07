@@ -18,13 +18,15 @@ public class Order {
     @NotNull
     private String title;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.MERGE})
     @JoinTable(name = "TB_ORDER_ITEMS")
     private Collection<Item> items;
 
     private Date createdAt = new Date();
 
     private OrderState state = OrderState.NEW;
+
+    private String description;
 
     public Order() {
 
@@ -36,6 +38,18 @@ public class Order {
 
     public Order(String title, Collection<Item> items) {
         this.title = title;
+        this.items = items;
+    }
+
+    public Order(Long id,
+                 String title,
+                 OrderState state,
+                 Date createdAt,
+                 Collection<Item> items) {
+        this.id = id;
+        this.title = title;
+        this.state = state;
+        this.createdAt = createdAt;
         this.items = items;
     }
 
@@ -69,6 +83,14 @@ public class Order {
 
     public void setItems(Collection<Item> items) {
         this.items = items;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
 
