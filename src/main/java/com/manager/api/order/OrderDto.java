@@ -13,15 +13,21 @@ public class OrderDto {
     private OrderState state;
     private Date createdAt;
     private Collection<ItemDto> items;
+    private String description;
+
+    public OrderDto() {
+    }
 
     public OrderDto(Long id,
                     String title,
                     OrderState state,
                     Date createdAt,
-                    Collection<ItemDto> items) {
+                    Collection<ItemDto> items,
+                    String description) {
         this.id = id;
         this.title = title;
         this.state = state;
+        this.description = description;
         this.createdAt = createdAt;
         this.items = items;
     }
@@ -56,5 +62,13 @@ public class OrderDto {
 
     public Collection<ItemDto> getItems() {
         return items;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

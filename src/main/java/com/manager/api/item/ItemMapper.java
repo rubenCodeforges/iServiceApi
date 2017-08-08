@@ -1,7 +1,5 @@
 package com.manager.api.item;
 
-
-import com.manager.api.image.Image;
 import com.manager.api.image.ImageMapper;
 
 import java.util.Collection;
@@ -31,15 +29,10 @@ public class ItemMapper {
             return null;
         }
 
-        if (isItemFromOrder(itemDto)) {
+        if (isQuickAddItem(itemDto)) {
             return createItemFromOrder(itemDto);
         }
 
-        Collection<Image> images = ImageMapper.mapDtoCollectionToEntity(itemDto.getImages());
-
-        if (hasNoImages(images)) {
-            return createItemWithoutImages(itemDto);
-        }
 
         return createNewItemWithImages(itemDto);
     }
@@ -58,8 +51,8 @@ public class ItemMapper {
         return itemDtos.stream().map(ItemMapper::mapToEntity).collect(Collectors.toList());
     }
 
-    private static boolean isItemFromOrder(ItemDto itemDto) {
-        return itemDto.getId() != null && itemDto.getImages().size() == 0;
+    private static boolean isQuickAddItem(ItemDto itemDto) {
+        return itemDto.getId() != null && itemDto.getImages() == null;
     }
 
     private static Item createItemFromOrder(ItemDto itemDto) {
@@ -89,17 +82,5 @@ public class ItemMapper {
         );
     }
 
-    private static Item createItemWithoutImages(ItemDto itemDto) {
-        return new Item(
-                itemDto.getTitle(),
-                itemDto.getDescription(),
-                itemDto.getPrice(),
-                itemDto.getCurrency()
-        );
-    }
-
-    private static boolean hasNoImages(Collection<Image> images) {
-        return images == null || images.isEmpty();
-    }
 }
 

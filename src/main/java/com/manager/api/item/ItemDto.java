@@ -35,6 +35,18 @@ public class ItemDto {
         this.images = images;
     }
 
+    public ItemDto(String title,
+                   String description,
+                   Float price,
+                   Currency currency,
+                   Collection<ImageDto> images) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.currency = currency;
+        this.images = images;
+    }
+
     public Long getId() {
         return id;
     }
