@@ -1,6 +1,6 @@
-package com.manager.api.item;
+package com.codeforges.iservice.api.item;
 
-import com.manager.api.Api;
+import com.codeforges.iservice.api.Api;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

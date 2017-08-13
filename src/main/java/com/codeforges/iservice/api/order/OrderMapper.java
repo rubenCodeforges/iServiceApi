@@ -1,7 +1,7 @@
-package com.manager.api.order;
+package com.codeforges.iservice.api.order;
 
-import com.manager.api.item.Item;
-import com.manager.api.item.ItemMapper;
+import com.codeforges.iservice.api.item.Item;
+import com.codeforges.iservice.api.item.ItemMapper;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

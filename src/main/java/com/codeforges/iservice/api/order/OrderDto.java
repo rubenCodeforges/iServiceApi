@@ -1,6 +1,6 @@
-package com.manager.api.order;
+package com.codeforges.iservice.api.order;
 
-import com.manager.api.item.ItemDto;
+import com.codeforges.iservice.api.item.ItemDto;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.util.Collection;
