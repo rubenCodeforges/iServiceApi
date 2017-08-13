@@ -1,4 +1,4 @@
-package com.manager;
+package com.codeforges.iservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
