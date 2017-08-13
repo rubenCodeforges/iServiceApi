@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.image;
+package com.codeforges.iservice.api.partsManager.image;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

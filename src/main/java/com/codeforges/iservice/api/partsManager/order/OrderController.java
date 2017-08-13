@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.order;
+package com.codeforges.iservice.api.partsManager.order;
 
 import com.codeforges.iservice.api.Api;
 import org.springframework.web.bind.annotation.*;

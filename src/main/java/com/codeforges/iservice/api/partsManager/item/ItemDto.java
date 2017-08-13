@@ -1,6 +1,6 @@
-package com.codeforges.iservice.api.item;
+package com.codeforges.iservice.api.partsManager.item;
 
-import com.codeforges.iservice.api.image.ImageDto;
+import com.codeforges.iservice.api.partsManager.image.ImageDto;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.util.Collection;

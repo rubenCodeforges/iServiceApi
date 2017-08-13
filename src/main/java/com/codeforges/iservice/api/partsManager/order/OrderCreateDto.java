@@ -1,6 +1,6 @@
-package com.codeforges.iservice.api.order;
+package com.codeforges.iservice.api.partsManager.order;
 
-import com.codeforges.iservice.api.item.ItemDto;
+import com.codeforges.iservice.api.partsManager.item.ItemDto;
 
 import java.util.Collection;
 

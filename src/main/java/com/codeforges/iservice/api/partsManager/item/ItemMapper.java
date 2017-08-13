@@ -1,6 +1,6 @@
-package com.codeforges.iservice.api.item;
+package com.codeforges.iservice.api.partsManager.item;
 
-import com.codeforges.iservice.api.image.ImageMapper;
+import com.codeforges.iservice.api.partsManager.image.ImageMapper;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.item;
+package com.codeforges.iservice.api.partsManager.item;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

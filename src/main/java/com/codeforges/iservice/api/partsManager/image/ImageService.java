@@ -1,6 +1,6 @@
-package com.codeforges.iservice.api.image;
+package com.codeforges.iservice.api.partsManager.image;
 
-import com.codeforges.iservice.api.internal.FileUploadService;
+import com.codeforges.iservice.api.common.files.FileUploadService;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
 
-    public ImageDto create(MultipartFile file) throws IOException {
+    ImageDto create(MultipartFile file) throws IOException {
         Image image = new Image();
 
         if (!file.isEmpty()) {
@@ -31,12 +31,12 @@ public class ImageService {
         return ImageMapper.mapToDto(this.imageRepository.save(image));
     }
 
-    public Resource getImageById(Long id) throws IOException {
+    Resource getImageById(Long id) throws IOException {
         Image image = imageRepository.findOne(id);
         return new FileSystemResource(image.getFilePath());
     }
 
-    public Resource getImageThumbnailById(Long id) throws IOException {
+    Resource getImageThumbnailById(Long id) throws IOException {
         Image image = imageRepository.findOne(id);
         return new FileSystemResource(image.getThumbPath());
     }

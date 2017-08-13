@@ -1,8 +1,8 @@
-package com.codeforges.iservice.api.item;
+package com.codeforges.iservice.api.partsManager.item;
 
 
-import com.codeforges.iservice.api.image.Image;
-import com.codeforges.iservice.api.order.Order;
+import com.codeforges.iservice.api.partsManager.image.Image;
+import com.codeforges.iservice.api.partsManager.order.Order;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;

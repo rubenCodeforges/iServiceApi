@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.order;
+package com.codeforges.iservice.api.partsManager.order;
 
 public enum OrderState {
     NEW,

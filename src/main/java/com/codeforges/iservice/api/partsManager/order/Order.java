@@ -1,6 +1,6 @@
-package com.codeforges.iservice.api.order;
+package com.codeforges.iservice.api.partsManager.order;
 
-import com.codeforges.iservice.api.item.Item;
+import com.codeforges.iservice.api.partsManager.item.Item;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
