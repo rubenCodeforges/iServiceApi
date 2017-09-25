@@ -1,7 +1,22 @@
 package com.codeforges.iservice.api.common.user;
 
-/**
- * Created by codeforges on 13.08.17.
- */
 public class UserMapper {
+
+    public static User googleUserIdTokenToUser(GoogleUserIdTokenDto googleUserIdTokenDto) {
+        return new User(
+                googleUserIdTokenDto.getSub(),
+                googleUserIdTokenDto.getEmail(),
+                googleUserIdTokenDto.isEmail_verified()
+        );
+    }
+
+    public static UserDto userToDto(User user) {
+        if (user == null) {
+            return null;
+        }
+        return new UserDto(
+                user.getId(),
+                user.getEmail()
+        );
+    }
 }
