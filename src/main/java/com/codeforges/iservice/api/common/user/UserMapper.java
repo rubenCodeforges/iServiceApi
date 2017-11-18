@@ -16,7 +16,8 @@ public class UserMapper {
         }
         return new UserDto(
                 user.getId(),
-                user.getEmail()
+                user.getEmail(),
+                user.getUserRole()
         );
     }
 }

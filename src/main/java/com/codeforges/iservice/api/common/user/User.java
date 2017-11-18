@@ -14,11 +14,14 @@ public class User {
     private String googleUserId;
     private String email;
     private boolean emailVerified;
+    private UserRole userRole = UserRole.GUEST;
 
     public User() {
     }
 
-    public User(String googleUserId, String email, boolean emailVerified) {
+    public User(String googleUserId,
+                String email,
+                boolean emailVerified) {
         this.googleUserId = googleUserId;
         this.email = email;
         this.emailVerified = emailVerified;
@@ -54,5 +57,13 @@ public class User {
 
     public void setEmailVerified(boolean emailVerified) {
         this.emailVerified = emailVerified;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 }
