@@ -5,16 +5,22 @@ public class UserDto {
     private Long id;
     private String email;
     private UserRole userRole;
+    private String name;
+    private String picture;
 
     public UserDto() {
     }
 
     public UserDto(Long id,
                    String email,
-                   UserRole userRole) {
+                   UserRole userRole,
+                   String name,
+                   String picture) {
         this.id = id;
         this.email = email;
         this.userRole = userRole;
+        this.name = name;
+        this.picture = picture;
     }
 
     public Long getId() {
@@ -39,5 +45,21 @@ public class UserDto {
 
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

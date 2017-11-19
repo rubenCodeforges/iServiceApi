@@ -13,17 +13,23 @@ public class User {
     private Long id;
     private String googleUserId;
     private String email;
+    private String name;
+    private String picture;
     private boolean emailVerified;
-    private UserRole userRole = UserRole.GUEST;
+    private UserRole userRole = UserRole.ROLE_GUEST;
 
     public User() {
     }
 
     public User(String googleUserId,
                 String email,
+                String name,
+                String picture,
                 boolean emailVerified) {
         this.googleUserId = googleUserId;
         this.email = email;
+        this.name = name;
+        this.picture = picture;
         this.emailVerified = emailVerified;
     }
 
@@ -65,5 +71,21 @@ public class User {
 
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

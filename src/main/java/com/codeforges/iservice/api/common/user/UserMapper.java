@@ -6,6 +6,8 @@ public class UserMapper {
         return new User(
                 googleUserIdTokenDto.getSub(),
                 googleUserIdTokenDto.getEmail(),
+                googleUserIdTokenDto.getName(),
+                googleUserIdTokenDto.getPicture(),
                 googleUserIdTokenDto.isEmail_verified()
         );
     }
@@ -17,7 +19,9 @@ public class UserMapper {
         return new UserDto(
                 user.getId(),
                 user.getEmail(),
-                user.getUserRole()
+                user.getUserRole(),
+                user.getName(),
+                user.getPicture()
         );
     }
 }

@@ -13,6 +13,8 @@ public class GoogleUserIdTokenDto {
     private String sub;
     private String azp;
     private String email;
+    private String name;
+    private String picture;
     private String aud;
     private Timestamp iat;
     private Timestamp exp;
@@ -108,5 +110,21 @@ public class GoogleUserIdTokenDto {
 
     public void setHd(String hd) {
         this.hd = hd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

@@ -16,6 +16,7 @@ public class AuthController {
         this.authService = authService;
     }
 
+    // TODO: Requires session to store the token ?
     @RequestMapping(value = "/signIn", method = RequestMethod.GET)
     public UserDto signIn(@RequestParam(value = "id_token") String idToken)
             throws GoogleUserNotVerifiedException, GoogleUserEmailNotVerifiedException {
