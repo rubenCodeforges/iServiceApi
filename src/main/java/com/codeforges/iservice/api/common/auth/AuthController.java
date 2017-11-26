@@ -1,14 +1,14 @@
 package com.codeforges.iservice.api.common.auth;
 
-import com.codeforges.iservice.api.Api;
 import com.codeforges.iservice.api.common.user.UserDto;
 import com.codeforges.iservice.api.common.user.exceptions.GoogleUserEmailNotVerifiedException;
 import com.codeforges.iservice.api.common.user.exceptions.GoogleUserNotVerifiedException;
+import com.codeforges.iservice.api.config.ApiConfig;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping(Api.URL + "/auth")
+@RequestMapping(ApiConfig.URL + "/auth")
 public class AuthController {
     private AuthService authService;
 

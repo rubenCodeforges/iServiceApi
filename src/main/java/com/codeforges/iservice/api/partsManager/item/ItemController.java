@@ -1,6 +1,6 @@
 package com.codeforges.iservice.api.partsManager.item;
 
-import com.codeforges.iservice.api.Api;
+import com.codeforges.iservice.api.config.ApiConfig;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -8,7 +8,7 @@ import java.util.Collection;
 
 @CrossOrigin
 @RestController
-@RequestMapping(Api.URL + "/items")
+@RequestMapping(ApiConfig.URL + "/items")
 public class ItemController {
 
     private final ItemService itemService;

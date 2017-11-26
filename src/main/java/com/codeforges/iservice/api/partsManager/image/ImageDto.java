@@ -1,6 +1,6 @@
 package com.codeforges.iservice.api.partsManager.image;
 
-import com.codeforges.iservice.api.Api;
+import com.codeforges.iservice.api.config.ApiConfig;
 
 public class ImageDto {
     private Long id;
@@ -21,7 +21,7 @@ public class ImageDto {
     }
 
     public String getImageUrl() {
-        return Api.URL + "/images/" + getId();
+        return ApiConfig.URL + "/images/" + getId();
     }
 
     public void setImageUrl(String imageUrl) {

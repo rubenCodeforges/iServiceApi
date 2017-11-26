@@ -1,0 +1,1 @@
+INSERT INTO tb_user (id, email, email_verified, name, user_role) VALUES (1, 'admin@dev.com', FALSE, 'admin', 0);

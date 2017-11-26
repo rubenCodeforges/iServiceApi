@@ -1,6 +1,6 @@
 package com.codeforges.iservice.api.partsManager.image;
 
-import com.codeforges.iservice.api.Api;
+import com.codeforges.iservice.api.config.ApiConfig;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @CrossOrigin
 @RestController
-@RequestMapping(Api.URL + "/images")
+@RequestMapping(ApiConfig.URL + "/images")
 public class ImageController {
     private ImageService imageService;
 

@@ -25,6 +25,7 @@ public class OrderMapper {
         );
     }
 
+    // TODO: DA FAK ?
     public static Collection<OrderDto> mapCollectionToDto(Collection<Order> orders) {
         Collection<Order> test = orders;
         if (orders == null) {

@@ -1,10 +1,13 @@
 package com.codeforges.iservice.api.common.auth;
 
-import com.codeforges.iservice.api.Api;
 import com.codeforges.iservice.api.common.user.*;
 import com.codeforges.iservice.api.common.user.exceptions.GoogleUserEmailNotVerifiedException;
 import com.codeforges.iservice.api.common.user.exceptions.GoogleUserNotVerifiedException;
+import com.codeforges.iservice.api.config.ApiConfig;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -14,8 +17,8 @@ public class AuthService {
     private UserService userService;
     private RestTemplate restTemplate;
 
-
-    public AuthService(UserService userService, RestTemplate restTemplate) {
+    public AuthService(UserService userService,
+                       RestTemplate restTemplate) {
         this.userService = userService;
         this.restTemplate = restTemplate;
     }
@@ -30,15 +33,22 @@ public class AuthService {
 
         if (userDto == null) {
             User user = UserMapper.googleUserIdTokenToUser(googleUserIdTokenDto);
-            return userService.createUser(user);
+            userDto = userService.createUser(user);
         }
 
+        SecurityContextHolder.getContext().setAuthentication(
+                new AnonymousAuthenticationToken(
+                        idToken,
+                        userDto,
+                        AuthorityUtils.createAuthorityList(userDto.getUserRole().toString())
+                )
+        );
         return userDto;
     }
 
     GoogleUserIdTokenDto verifyGoogleUser(String idToken) throws GoogleUserNotVerifiedException {
         UriComponentsBuilder uriComponentsBuilder =
-                UriComponentsBuilder.fromHttpUrl(Api.GOOGLE_ID_TOKEN_VERFEFICATION_URL);
+                UriComponentsBuilder.fromHttpUrl(ApiConfig.GOOGLE_ID_TOKEN_VERIFICATION_URL);
         uriComponentsBuilder.queryParam("id_token", idToken);
         ResponseEntity<GoogleUserIdTokenDto> response;
 
