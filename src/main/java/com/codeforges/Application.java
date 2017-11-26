@@ -1,4 +1,4 @@
-package com.codeforges.iservice;
+package com.codeforges;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

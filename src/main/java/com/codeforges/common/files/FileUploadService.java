@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.common.files;
+package com.codeforges.common.files;
 
 import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Value;

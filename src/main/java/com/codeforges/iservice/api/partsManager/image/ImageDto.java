@@ -1,6 +1,6 @@
 package com.codeforges.iservice.api.partsManager.image;
 
-import com.codeforges.iservice.api.config.ApiConfig;
+import com.codeforges.common.config.ApiConfig;
 
 public class ImageDto {
     private Long id;

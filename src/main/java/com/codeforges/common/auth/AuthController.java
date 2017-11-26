@@ -1,9 +1,9 @@
-package com.codeforges.iservice.api.common.auth;
+package com.codeforges.common.auth;
 
-import com.codeforges.iservice.api.common.user.UserDto;
-import com.codeforges.iservice.api.common.user.exceptions.GoogleUserEmailNotVerifiedException;
-import com.codeforges.iservice.api.common.user.exceptions.GoogleUserNotVerifiedException;
-import com.codeforges.iservice.api.config.ApiConfig;
+import com.codeforges.common.config.ApiConfig;
+import com.codeforges.common.user.UserDto;
+import com.codeforges.common.user.exceptions.GoogleUserEmailNotVerifiedException;
+import com.codeforges.common.user.exceptions.GoogleUserNotVerifiedException;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin

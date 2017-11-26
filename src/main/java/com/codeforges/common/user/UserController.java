@@ -1,6 +1,6 @@
-package com.codeforges.iservice.api.common.user;
+package com.codeforges.common.user;
 
-import com.codeforges.iservice.api.config.ApiConfig;
+import com.codeforges.common.config.ApiConfig;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

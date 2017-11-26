@@ -1,6 +1,6 @@
 package com.codeforges.iservice.api.partsManager.image;
 
-import com.codeforges.iservice.api.config.ApiConfig;
+import com.codeforges.common.config.ApiConfig;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

@@ -1,6 +1,6 @@
 package com.codeforges.iservice.api.partsManager.image;
 
-import com.codeforges.iservice.api.common.files.FileUploadService;
+import com.codeforges.common.files.FileUploadService;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;

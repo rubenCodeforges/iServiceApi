@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.config;
+package com.codeforges.common.config;
 
 public final class ApiConfig {
     public static final String VERSION = "/v1";

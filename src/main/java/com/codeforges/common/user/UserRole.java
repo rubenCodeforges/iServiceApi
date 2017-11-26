@@ -1,4 +1,4 @@
-package com.codeforges.iservice.api.common.user;
+package com.codeforges.common.user;
 
 
 public enum UserRole {
