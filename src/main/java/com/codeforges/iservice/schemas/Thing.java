@@ -1,9 +1,10 @@
 package com.codeforges.iservice.schemas;
 
 import java.util.Collection;
+import java.util.UUID;
 
 public class Thing {
-    private String identifier;
+    private UUID uuid;
     private String name;
     private String disambiguatingDescription;
     private String description;

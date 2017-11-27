@@ -1,16 +1,18 @@
 package com.codeforges.iservice.schemas;
 
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Product extends Thing {
     String productID;
     AggregateRating aggregateRating;
     Audience audience;
-    String award;
     Brand brand;
     Thing category;
-    //    String color;
+    Attribute attribute;
+    //    TODO: Those could be attribute
+//    String color;
+//    String award;
 //    Number number;
 //    Number heigth;
 //    Number width;
@@ -23,8 +25,9 @@ public class Product extends Thing {
     Object itemCondition;
     Organization manufacturer;
     Product material;
+    // required ???
     ProductModel model;
-    Date productionDate;
-    Date purchaseDate;
-    Date releaseDate;
+    LocalDateTime productionDate;
+    LocalDateTime purchaseDate;
+    LocalDateTime releaseDate;
 }
