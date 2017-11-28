@@ -1,4 +1,6 @@
-package com.codeforges.iservice.schemas.product;
+package com.codeforges.iservice.schemas.media;
+
+import com.codeforges.iservice.schemas.common.Thing;
 
 import java.util.Collection;
 

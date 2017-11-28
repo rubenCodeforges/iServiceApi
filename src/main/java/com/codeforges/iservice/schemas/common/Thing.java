@@ -1,4 +1,6 @@
-package com.codeforges.iservice.schemas.product;
+package com.codeforges.iservice.schemas.common;
+
+import com.codeforges.iservice.schemas.media.Image;
 
 import java.util.Collection;
 import java.util.UUID;

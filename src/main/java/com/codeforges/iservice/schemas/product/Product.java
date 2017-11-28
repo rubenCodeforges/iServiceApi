@@ -1,5 +1,10 @@
 package com.codeforges.iservice.schemas.product;
 
+import com.codeforges.iservice.schemas.common.Thing;
+import com.codeforges.iservice.schemas.organization.Brand;
+import com.codeforges.iservice.schemas.organization.Organization;
+import com.codeforges.iservice.schemas.rating.AggregateRating;
+
 import java.time.LocalDateTime;
 import java.util.Collection;
 

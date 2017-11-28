@@ -1,7 +1,7 @@
 package com.codeforges.iservice.schemas.product;
 
 
-public enum RelationShipType {
+public enum RelationType {
     ACCESSORY,
     SIMILAR_PRODUCT,
     PART_OF,
