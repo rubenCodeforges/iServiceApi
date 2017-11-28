@@ -7,6 +7,6 @@ import com.codeforges.iservice.schemas.place.Place;
  * Created by codeforges on 11/23/2017.
  */
 public class Audience extends Thing {
-    String audienceType;
-    Place geographicArea;
+    private String audienceType;
+    private Place geographicArea;
 }

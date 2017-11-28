@@ -5,6 +5,6 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class Attribute {
-    UUID uuid;
-    HashMap<String, Object> value;
+    private UUID uuid;
+    private HashMap<String, Object> value;
 }

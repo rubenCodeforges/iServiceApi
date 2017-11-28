@@ -9,19 +9,19 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 
 public class Product extends Thing {
-    String productID;
-    ProductStatus productStatus;
-    AggregateRating aggregateRating;
-    Audience audience;
-    Brand brand;
-    Collection<Attribute> attributes;
-    Collection<Category> categories;
-    Collection<Product> isAccessoryOrSparePartFor;
-    Collection<Product> isConsumableFor;
-    Collection<ProductRelation> isRelatedTo;
-    Collection<Product> isSimilarTo;
-    Organization manufacturer;
-    Collection<Product> material;
-    LocalDateTime createdAt;
-    LocalDateTime updatedAt;
+    private String productID;
+    private ProductStatus productStatus;
+    private AggregateRating aggregateRating;
+    private Audience audience;
+    private Brand brand;
+    private Collection<Attribute> attributes;
+    private Collection<Category> categories;
+    private Collection<Product> isAccessoryOrSparePartFor;
+    private Collection<Product> isConsumableFor;
+    private Collection<ProductRelation> isRelatedTo;
+    private Collection<Product> isSimilarTo;
+    private Organization manufacturer;
+    private Collection<Product> material;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
