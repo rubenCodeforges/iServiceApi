@@ -1,4 +1,4 @@
-package com.codeforges.iservice.schemas;
+package com.codeforges.iservice.schemas.product;
 
 import java.util.Collection;
 import java.util.UUID;

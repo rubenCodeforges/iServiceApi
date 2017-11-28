@@ -1,4 +1,4 @@
-package com.codeforges.iservice.schemas;
+package com.codeforges.iservice.schemas.product;
 
 /**
  * Created by codeforges on 11/23/2017.

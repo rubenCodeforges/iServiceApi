@@ -1,4 +1,4 @@
-package com.codeforges.iservice.schemas;
+package com.codeforges.iservice.schemas.product;
 
 
 public class Brand extends Thing {
