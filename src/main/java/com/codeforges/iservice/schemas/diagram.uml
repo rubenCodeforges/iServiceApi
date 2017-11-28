@@ -3,48 +3,44 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="923.0084595959597" y="480.0">com.codeforges.iservice.schemas.place.Place</node>
-    <node x="1696.3228535353535" y="609.0">com.codeforges.iservice.schemas.rating.Rating</node>
-    <node x="0.0" y="609.0">com.codeforges.iservice.schemas.product.ProductRelation</node>
-    <node x="430.8453282828284" y="816.0">com.codeforges.iservice.schemas.product.Product</node>
-    <node x="1493.878787878788" y="960.0">com.codeforges.iservice.schemas.rating.Review</node>
-    <node x="870.5" y="633.0">com.codeforges.iservice.schemas.product.Audience</node>
-    <node x="209.5" y="444.0">com.codeforges.iservice.schemas.organization.Brand</node>
-    <node x="1304.5" y="0.0">com.codeforges.iservice.schemas.media.Image</node>
-    <node x="1118.5" y="633.0">com.codeforges.iservice.schemas.product.Attribute</node>
-    <node x="1784.5454545454545" y="960.0">com.codeforges.iservice.schemas.rating.AggregateRating</node>
-    <node x="8.5" y="432.0">com.codeforges.iservice.schemas.product.RelationType</node>
-    <node x="1296.5" y="621.0">com.codeforges.iservice.schemas.product.ProductStatus</node>
-    <node x="1732.5728535353535" y="480.0">com.codeforges.iservice.schemas.person.Person</node>
-    <node x="1335.0" y="177.0">com.codeforges.iservice.schemas.common.Thing</node>
-    <node x="1545.628787878788" y="480.0">com.codeforges.iservice.schemas.rating.CreativeWork</node>
-    <node x="576.5" y="645.0">com.codeforges.iservice.schemas.product.Category</node>
-    <node x="1384.5" y="480.0">com.codeforges.iservice.schemas.organization.Organization</node>
+    <node x="621.25" y="460.0">com.codeforges.iservice.schemas.place.Place</node>
+    <node x="357.50000000000006" y="589.0">com.codeforges.iservice.schemas.product.ProductRelation</node>
+    <node x="455.7146464646464" y="786.0">com.codeforges.iservice.schemas.product.Product</node>
+    <node x="575.5" y="613.0">com.codeforges.iservice.schemas.product.Audience</node>
+    <node x="0.0" y="424.0">com.codeforges.iservice.schemas.organization.Brand</node>
+    <node x="671.6527777777779" y="0.0">com.codeforges.iservice.schemas.media.Image</node>
+    <node x="839.25" y="613.0">com.codeforges.iservice.schemas.product.Attribute</node>
+    <node x="366.00000000000006" y="412.0">com.codeforges.iservice.schemas.product.RelationType</node>
+    <node x="1026.75" y="601.0">com.codeforges.iservice.schemas.product.ProductStatus</node>
+    <node x="909.75" y="460.0">com.codeforges.iservice.schemas.person.Person</node>
+    <node x="702.1527777777779" y="177.0">com.codeforges.iservice.schemas.common.Thing</node>
+    <node x="666.7146464646464" y="1227.0">com.codeforges.iservice.schemas.product.Category</node>
+    <node x="750.75" y="460.0">com.codeforges.iservice.schemas.organization.Organization</node>
   </nodes>
   <notes />
   <edges>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.product.Attribute">
-      <point x="126.5454545454545" y="-195.5" />
-      <point x="789.3907828282829" y="776.0" />
-      <point x="1197.5" y="776.0" />
+      <point x="103.11111111111109" y="-195.5" />
+      <point x="790.8257575757575" y="746.0" />
+      <point x="918.25" y="746.0" />
       <point x="0.0" y="39.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.person.Person" target="com.codeforges.iservice.schemas.common.Thing">
       <point x="0.0" y="-15.5" />
-      <point x="1780.5728535353535" y="392.0" />
-      <point x="1518.909090909091" y="392.0" />
-      <point x="64.90909090909099" y="87.5" />
+      <point x="957.75" y="392.0" />
+      <point x="855.1527777777779" y="392.0" />
+      <point x="34.0" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Category" target="com.codeforges.iservice.schemas.product.Product">
-      <point x="68.5" y="27.5" />
-      <point x="782.0" y="756.0" />
-      <point x="705.0271464646466" y="756.0" />
-      <point x="42.181818181818244" y="-195.5" />
+      <point x="-91.33333333333326" y="-27.5" />
+      <point x="712.3813131313132" y="1202.0" />
+      <point x="571.7146464646464" y="1202.0" />
+      <point x="-116.0" y="195.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.organization.Brand">
-      <point x="-84.36363636363637" y="-195.5" />
-      <point x="578.481691919192" y="766.0" />
-      <point x="382.5" y="766.0" />
+      <point x="-206.22222222222217" y="-195.5" />
+      <point x="481.49242424242425" y="766.0" />
+      <point x="173.0" y="766.0" />
       <point x="0.0" y="51.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.common.Thing" target="com.codeforges.iservice.schemas.media.Image">
@@ -53,155 +49,105 @@
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Audience" target="com.codeforges.iservice.schemas.common.Thing">
       <point x="57.0" y="-39.5" />
-      <point x="1041.5" y="584.0" />
-      <point x="1017.5084595959597" y="584.0" />
-      <point x="1017.5084595959597" y="412.0" />
-      <point x="1432.3636363636365" y="412.0" />
-      <point x="-21.636363636363512" y="87.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.Rating" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="56.75" y="-63.5" />
-      <point x="1866.5728535353535" y="584.0" />
-      <point x="1839.0728535353535" y="584.0" />
-      <point x="1839.0728535353535" y="382.0" />
-      <point x="1540.5454545454545" y="382.0" />
-      <point x="86.5454545454545" y="87.5" />
+      <point x="746.5" y="564.0" />
+      <point x="715.75" y="564.0" />
+      <point x="715.75" y="392.0" />
+      <point x="787.1527777777779" y="392.0" />
+      <point x="-34.0" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.product.ProductRelation">
-      <point x="-210.90909090909093" y="-195.5" />
-      <point x="451.9362373737374" y="796.0" />
-      <point x="33.0" y="796.0" />
+      <point x="-154.66666666666663" y="-195.5" />
+      <point x="533.0479797979798" y="756.0" />
+      <point x="390.50000000000006" y="756.0" />
       <point x="-66.0" y="63.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.place.Place" target="com.codeforges.iservice.schemas.common.Thing">
       <point x="0.0" y="-15.5" />
-      <point x="965.0084595959597" y="402.0" />
-      <point x="1410.7272727272727" y="402.0" />
-      <point x="-43.27272727272725" y="87.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.AggregateRating" target="com.codeforges.iservice.schemas.rating.Rating">
-      <point x="-62.0" y="-51.5" />
-      <point x="1846.5454545454545" y="796.0" />
-      <point x="1866.5728535353535" y="796.0" />
-      <point x="56.75" y="63.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.CreativeWork" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="0.0" y="-15.5" />
-      <point x="1616.628787878788" y="402.0" />
-      <point x="1497.2727272727273" y="402.0" />
-      <point x="43.27272727272725" y="87.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.Review" target="com.codeforges.iservice.schemas.rating.CreativeWork">
-      <point x="0.0" y="-51.5" />
-      <point x="1617.878787878788" y="796.0" />
-      <point x="1616.628787878788" y="796.0" />
-      <point x="0.0" y="15.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.product.Category">
-      <point x="0.0" y="-195.5" />
-      <point x="662.8453282828284" y="796.0" />
-      <point x="645.0" y="796.0" />
-      <point x="-68.5" y="27.5" />
+      <point x="663.25" y="382.0" />
+      <point x="753.1527777777779" y="382.0" />
+      <point x="-68.0" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.organization.Organization" target="com.codeforges.iservice.schemas.common.Thing">
       <point x="0.0" y="-15.5" />
       <point x="0.0" y="87.5" />
     </edge>
+    <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.product.Category">
+      <point x="116.0" y="195.5" />
+      <point x="0.0" y="-27.5" />
+    </edge>
     <edge source="com.codeforges.iservice.schemas.product.Audience" target="com.codeforges.iservice.schemas.place.Place">
       <point x="-57.0" y="-39.5" />
-      <point x="927.5" y="584.0" />
-      <point x="965.0084595959597" y="584.0" />
+      <point x="632.5" y="564.0" />
+      <point x="663.25" y="564.0" />
       <point x="0.0" y="15.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.organization.Organization">
-      <point x="210.90909090909088" y="-195.5" />
-      <point x="873.7544191919193" y="796.0" />
-      <point x="1454.0" y="796.0" />
+      <point x="51.55555555555554" y="-195.5" />
+      <point x="739.270202020202" y="736.0" />
+      <point x="820.25" y="736.0" />
       <point x="0.0" y="15.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.product.ProductStatus">
-      <point x="168.72727272727275" y="-195.5" />
-      <point x="831.5726010101012" y="786.0" />
-      <point x="1370.0" y="786.0" />
+      <point x="206.22222222222217" y="-195.5" />
+      <point x="893.9368686868686" y="766.0" />
+      <point x="1100.25" y="766.0" />
       <point x="0.0" y="51.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.Review" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="-82.66666666666674" y="-51.5" />
-      <point x="1535.128787878788" y="412.0" />
-      <point x="1475.6363636363637" y="412.0" />
-      <point x="21.63636363636374" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.ProductRelation" target="com.codeforges.iservice.schemas.product.RelationType">
       <point x="0.0" y="-63.5" />
       <point x="0.0" y="63.5" />
     </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.AggregateRating" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="62.0" y="-51.5" />
-      <point x="1970.5454545454545" y="796.0" />
-      <point x="1942.1704545454545" y="796.0" />
-      <point x="1942.1704545454545" y="372.0" />
-      <point x="1562.1818181818182" y="372.0" />
-      <point x="108.18181818181824" y="87.5" />
-    </edge>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="-42.181818181818244" y="-195.5" />
-      <point x="620.6635101010102" y="756.0" />
-      <point x="566.0" y="756.0" />
-      <point x="566.0" y="382.0" />
-      <point x="1367.4545454545455" y="382.0" />
-      <point x="-86.5454545454545" y="87.5" />
+      <point x="154.66666666666663" y="-195.5" />
+      <point x="842.381313131313" y="756.0" />
+      <point x="1016.25" y="756.0" />
+      <point x="1016.25" y="382.0" />
+      <point x="889.1527777777779" y="382.0" />
+      <point x="68.0" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.ProductRelation" target="com.codeforges.iservice.schemas.product.Product">
-      <point x="0.0" y="63.5" />
-      <point x="99.0" y="786.0" />
-      <point x="494.11805555555566" y="786.0" />
-      <point x="-168.72727272727275" y="-195.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.Rating" target="com.codeforges.iservice.schemas.person.Person">
-      <point x="-56.75" y="-63.5" />
-      <point x="1753.0728535353535" y="584.0" />
-      <point x="1780.5728535353535" y="584.0" />
-      <point x="0.0" y="15.5" />
+      <point x="66.0" y="63.5" />
+      <point x="522.5" y="736.0" />
+      <point x="636.1590909090909" y="736.0" />
+      <point x="-51.55555555555554" y="-195.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.product.Product" target="com.codeforges.iservice.schemas.product.Audience">
-      <point x="84.36363636363637" y="-195.5" />
-      <point x="747.2089646464648" y="766.0" />
-      <point x="984.5" y="766.0" />
+      <point x="0.0" y="-195.5" />
+      <point x="687.7146464646464" y="766.0" />
+      <point x="689.5" y="766.0" />
       <point x="0.0" y="39.5" />
     </edge>
-    <edge source="com.codeforges.iservice.schemas.rating.Review" target="com.codeforges.iservice.schemas.rating.Rating">
-      <point x="82.66666666666674" y="-51.5" />
-      <point x="1700.5454545454547" y="796.0" />
-      <point x="1753.0728535353535" y="796.0" />
-      <point x="-56.75" y="63.5" />
-    </edge>
     <edge source="com.codeforges.iservice.schemas.product.Category" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="0.0" y="-27.5" />
-      <point x="713.5" y="392.0" />
-      <point x="1389.090909090909" y="392.0" />
-      <point x="-64.90909090909099" y="87.5" />
-    </edge>
-    <edge source="com.codeforges.iservice.schemas.organization.Brand" target="com.codeforges.iservice.schemas.common.Thing">
-      <point x="86.5" y="-51.5" />
-      <point x="469.0" y="372.0" />
-      <point x="1345.8181818181818" y="372.0" />
-      <point x="-108.18181818181824" y="87.5" />
+      <point x="91.33333333333337" y="-27.5" />
+      <point x="895.0479797979798" y="1202.0" />
+      <point x="1184.25" y="1202.0" />
+      <point x="1184.25" y="372.0" />
+      <point x="923.1527777777779" y="372.0" />
+      <point x="102.0" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.organization.Brand" target="com.codeforges.iservice.schemas.media.Image">
       <point x="-86.5" y="-51.5" />
-      <point x="296.0" y="152.0" />
-      <point x="1334.5" y="152.0" />
+      <point x="86.5" y="152.0" />
+      <point x="701.6527777777779" y="152.0" />
       <point x="-60.0" y="63.5" />
+    </edge>
+    <edge source="com.codeforges.iservice.schemas.organization.Brand" target="com.codeforges.iservice.schemas.common.Thing">
+      <point x="86.5" y="-51.5" />
+      <point x="259.5" y="372.0" />
+      <point x="719.1527777777779" y="372.0" />
+      <point x="-102.0" y="87.5" />
     </edge>
     <edge source="com.codeforges.iservice.schemas.media.Image" target="com.codeforges.iservice.schemas.common.Thing">
       <point x="60.0" y="63.5" />
-      <point x="1454.5" y="152.0" />
-      <point x="1513.5" y="152.0" />
+      <point x="821.6527777777779" y="152.0" />
+      <point x="880.6527777777779" y="152.0" />
       <point x="59.5" y="-87.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="844.9999999999998" y="715.9999999999998" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="845.9999999999998" y="636.9999999999998" />
+  <SelectedNodes>
+    <node>com.codeforges.iservice.schemas.organization.Organization</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
   </Categories>
